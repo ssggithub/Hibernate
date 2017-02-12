@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class News {
 	private Integer id; //field
-	private String title;
-	private String author;
+	private String title;//field
+	private String author;//field
 	
-	private String conts;
+	private String conts;//field
 	
-	private Blob picture;
+	private Blob picture;//field
 	
 	public Blob getPicture() {
 		return picture;
