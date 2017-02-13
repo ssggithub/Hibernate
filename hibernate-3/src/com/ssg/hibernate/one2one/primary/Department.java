@@ -4,7 +4,7 @@ public class Department {
 
 	private Integer deptId;
 	private String deptName;
-	
+
 	private Manager mgr;
 
 	public Integer getDeptId() {
@@ -30,7 +30,5 @@ public class Department {
 	public void setMgr(Manager mgr) {
 		this.mgr = mgr;
 	}
-	
-	
-	
+
 }
