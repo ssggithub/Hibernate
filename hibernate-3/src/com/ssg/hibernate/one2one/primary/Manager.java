@@ -2,7 +2,7 @@ package com.ssg.hibernate.one2one.primary;
 
 /**
  * 
- * @author ssgssg
+ * @author ssg
  *
  */
 public class Manager {
