@@ -1,5 +1,6 @@
 package com.ssg.hibernate.one2one.primary;
 
+//
 public class Department {
 
 	private Integer deptId;
