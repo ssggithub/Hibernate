@@ -7,10 +7,6 @@ public class Manager {
 	
 	private Department dept;
 
-	/**
-	 * 
-	 * @return
-	 */
 	public Integer getMgrId() {
 		return mgrId;
 	}
