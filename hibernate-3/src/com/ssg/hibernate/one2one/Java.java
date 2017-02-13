@@ -2,7 +2,7 @@ package com.ssg.hibernate.one2one;
 
 /**
  * 
- * @author ssg
+ * @author ssgssgssgss
  *
  */
 public class Java {
