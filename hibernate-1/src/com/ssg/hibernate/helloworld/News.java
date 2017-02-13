@@ -10,7 +10,7 @@ public class News {
 	
 	private String conts;//field
 	
-	private Blob picture;
+	private Blob picture;//field
 	
 	public Blob getPicture() {
 		return picture;
