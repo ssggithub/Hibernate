@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ssg.hibernate.entities">
+
+    <class name="News" table="NEWS" dynamic-update="true">
+    
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="title" type="string" column="TITLE"
+        	unique="true" update="false" index="news_index" length="20">
+        </property>
+        
+        <property name="author" type="java.lang.String" index="news_index">
+            <column name="AUTHOR" />
+        </property>
+        
+        <property name="dates" type="time">
+            <column name="DATES" />
+        </property>
+        
+        <!-- 映射大对象 -->
+        <!-- 若希望精确映射 SQL 类型, 可以使用 sql-type 属性. -->
+        <property name="conts" type="text">
+        	<column name="CONTS"></column>
+        </property>
+        
+        <property name="image" type="blob">
+        	<column name="IMAGE"></column>
+        </property>
+        
+    </class>
+    
+</hibernate-mapping>
