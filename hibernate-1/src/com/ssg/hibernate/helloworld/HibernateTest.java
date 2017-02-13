@@ -14,7 +14,7 @@ public class HibernateTest {
 
 	@Test
 	public void test() {
-		System.out.println("test starting test starting...");
+		System.out.println("test starting...");
 
 		// 1.创建sessionFactory对象
 		SessionFactory sessionFactory = null;
