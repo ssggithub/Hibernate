@@ -46,7 +46,7 @@ public class HibernateTest {
 	@Test
 	public void testGet() {
 		// 1. 默认情况下对关联属性使用懒加载
-		Department dept = (Department) session.get(Department.class, 1);
+		Department dept = (Department) session.get(Department.class, 82);
 		System.out.println(dept.getDeptName());
 
 		// 2. 所以会出现懒加载异常的问题. .
