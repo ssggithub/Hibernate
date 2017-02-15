@@ -15,66 +15,63 @@ public class HibernateTest {
 	private SessionFactory sessionFactory;
 	private Session session;
 	private Transaction transaction;
-	
+
 	@Before
-	public void init(){
+	public void init() {
 		Configuration configuration = new Configuration().configure();
-		ServiceRegistry serviceRegistry = 
-				new ServiceRegistryBuilder().applySettings(configuration.getProperties())
-				                            .buildServiceRegistry();
+		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties())
+				.buildServiceRegistry();
 		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-		
+
 		session = sessionFactory.openSession();
 		transaction = session.beginTransaction();
 	}
-	
+
 	@After
-	public void destroy(){
+	public void destroy() {
 		transaction.commit();
 		session.close();
 		sessionFactory.close();
 	}
-	
+
 	@Test
-	public void testGet2(){
-		//åœ¨æŸ¥è¯¢æ²¡æœ‰å¤–é”®çš„å®ä½“å¯¹è±¡æ—¶, ä½¿ç”¨çš„å·¦å¤–è¿æ¥æŸ¥è¯¢, ä¸€å¹¶æŸ¥è¯¢å‡ºå…¶å…³è”çš„å¯¹è±¡
-		//å¹¶å·²ç»è¿›è¡Œåˆå§‹åŒ–. 
+	public void testGet2() {
+		// ÔÚ²éÑ¯Ã»ÓĞÍâ¼üµÄÊµÌå¶ÔÏóÊ±, Ê¹ÓÃµÄ×óÍâÁ¬½Ó²éÑ¯, Ò»²¢²éÑ¯³öÆä¹ØÁªµÄ¶ÔÏó
+		// ²¢ÒÑ¾­½øĞĞ³õÊ¼»¯.
 		Manager mgr = (Manager) session.get(Manager.class, 1);
-		System.out.println(mgr.getMgrName()); 
-		System.out.println(mgr.getDept().getDeptName()); 
+		System.out.println(mgr.getMgrName());
+		System.out.println(mgr.getDept().getDeptName());
 	}
-	
+
 	@Test
-	public void testGet(){
-		//1. é»˜è®¤æƒ…å†µä¸‹å¯¹å…³è”å±æ€§ä½¿ç”¨æ‡’åŠ è½½
+	public void testGet() {
+		// 1. Ä¬ÈÏÇé¿öÏÂ¶Ô¹ØÁªÊôĞÔÊ¹ÓÃÀÁ¼ÓÔØ
 		Department dept = (Department) session.get(Department.class, 1);
-		System.out.println(dept.getDeptName()); 
-		
-		//2. æ‰€ä»¥ä¼šå‡ºç°æ‡’åŠ è½½å¼‚å¸¸çš„é—®é¢˜. 
+		System.out.println(dept.getDeptName());
+
+		// 2. ËùÒÔ»á³öÏÖÀÁ¼ÓÔØÒì³£µÄÎÊÌâ. ¢˜.
 		Manager mgr = dept.getMgr();
-		System.out.println(mgr.getMgrName()); 
+		System.out.println(mgr.getMgrName());
 	}
-	
+
 	@Test
-	public void testSave(){
-		
+	public void testSave() {
+
 		Department department = new Department();
 		department.setDeptName("DEPT-DD");
-		
+
 		Manager manager = new Manager();
 		manager.setMgrName("MGR-DD");
-		
-		//è®¾å®šå…³è”å…³ç³»
+
+		// Éè¶¨¹ØÁª¹ØÏµ
 		manager.setDept(department);
 		department.setMgr(manager);
-		
-		//ä¿å­˜æ“ä½œ
-		//å…ˆæ’å…¥å“ªä¸€ä¸ªéƒ½ä¸ä¼šæœ‰å¤šä½™çš„ UPDATE
+
+		// ±£´æ²Ù×÷
+		// ÏÈ²åÈëÄÄÒ»¸ö¶¼²»»áÓĞ¶àÓàµÄ UPDATE
 		session.save(department);
 		session.save(manager);
-		
+
 	}
-	
-	
 
 }
