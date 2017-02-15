@@ -1,13 +1,10 @@
 package com.ssg.hibernate.entities;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
-
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

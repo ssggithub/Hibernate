@@ -1,10 +1,5 @@
 package com.ssg.hibernate.one2one.primary;
 
-/**
- * 
- * @author ssgssg
- *
- */
 public class Manager {
 
 	private Integer mgrId;
