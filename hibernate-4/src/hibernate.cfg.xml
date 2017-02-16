@@ -7,7 +7,7 @@
     
     	<!-- Hibernate 连接数据库的基本信息 -->
     	<property name="connection.username">scott</property>
-    	<property name="connection.password">java</property>
+    	<property name="connection.password">oracle</property>
     	<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
     	<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
 
@@ -61,11 +61,11 @@
     	<property name="current_session_context_class">thread</property>
     	
     	<!-- 需要关联的 hibernate 映射文件 .hbm.xml -->
-		<mapping resource="com/atguigu/hibernate/entities/Department.hbm.xml"/>
-		<mapping resource="com/atguigu/hibernate/entities/Employee.hbm.xml"/>
+		<mapping resource="com/ssg/hibernate/entities/Department.hbm.xml"/>
+		<mapping resource="com/ssg/hibernate/entities/Employee.hbm.xml"/>
 		
-		<class-cache usage="read-write" class="com.atguigu.hibernate.entities.Employee"/>
+		<!-- <class-cache usage="read-write" class="com.atguigu.hibernate.entities.Employee"/>
 		<class-cache usage="read-write" class="com.atguigu.hibernate.entities.Department"/>
-		<collection-cache usage="read-write" collection="com.atguigu.hibernate.entities.Department.emps"/>
+		<collection-cache usage="read-write" collection="com.atguigu.hibernate.entities.Department.emps"/> -->
     </session-factory>
 </hibernate-configuration>
