@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/com/ssg/hibernate/joined/subclass/HibernateTest.java=UTF-8
 encoding//src/com/ssg/hibernate/n2n/HibernateTest.java=UTF-8
 encoding//src/com/ssg/hibernate/one2one/foreign/HibernateTest.java=UTF-8
+encoding//src/com/ssg/hibernate/subclass/HibernateTest.java=UTF-8
+encoding//src/com/ssg/hibernate/union/subclass/HibernateTest.java=UTF-8

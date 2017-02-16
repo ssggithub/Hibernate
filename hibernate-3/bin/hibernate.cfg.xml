@@ -32,8 +32,8 @@
     	<!-- 设定对数据库进行批量删除，批量更新和批量插入的时候的批次大小 -->
     	<property name="jdbc.batch_size">30</property>
 		
-		<mapping resource="com/ssg/hibernate/n2n/Category.hbm.xml"/>
-		<mapping resource="com/ssg/hibernate/n2n/Item.hbm.xml"/>
+		<mapping resource="com/ssg/hibernate/union/subclass/Person.hbm.xml"/>
+		
 
 	</session-factory>
 </hibernate-configuration>
